@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hola {{request.user.first_name}}</h3>
+    <h4>Tu saldo es  de {{utcoins}} <strong>UTCoins</strong>    </h4>
+   
+    <a href="{% url 'apuestas:torneos_apuestas' %}">Apostar</a><br>
+    {% if request.user.is_staff == True %}
+        <a href="{% url 'apuestas:torneos_sin_rol' %}">Torneos sin roles</a>
+    {% endif %}<br>
+    <a href="{% url 'logout' %}">Cerrar sesión</a>
+        
+    
+    
+</body>
+</html>

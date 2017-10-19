@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Apuestas</h3>
+    
+    {% for materia in materias  %}
+        <p>Materia: <strong>{{materia.nombre}}</strong></p>  
+        <p>Para esta materia las apuestas abiertas son:</p>
+        
+        {% for apuesta in materia.apuesta_set.all %}
+            <p><a href="{% url 'apuestas:apuesta_difernetes' apuesta.id %}">{{apuesta}}</a></p>
+        {% endfor %}
+            
+        
+    {% endfor %}
+        
+</body>
+</html>
