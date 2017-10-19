@@ -1,0 +1,20 @@
+<div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo">UtOdds</a>
+    <ul class="right hide-on-med-and-down">
+        {% if request.user.is_authenticated == False %}
+            <a href="{% url 'apuestas:guardar_usuario' %}">Crear usuario</a>
+        {% else %}
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        
+        {% endif %}
+      
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+        {% if request.user.is_authenticated == False %}
+            <a href="{% url 'apuestas:guardar_usuario' %}">Crear usuario</a>
+        {% else %}
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        {% endif %}
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+</div>

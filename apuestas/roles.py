@@ -43,5 +43,6 @@ def crear_rol(liga, torneo):
             evento.save()
     
     torneo.rol = True
+    torneo.save()
 
 

@@ -47,7 +47,6 @@ def logout_user(request):
     logout(request)
     return redirect('/')
 
-@login_required
 def guardar_usuario(request):
     if request.method == "POST":
         user_form = UserForm(request.POST)
@@ -60,7 +59,7 @@ def guardar_usuario(request):
             user.first_name =  user_form.cleaned_data['first_name']
 
             usuario = usuario_form.save(commit=False)
-            usuario.usuario = user
+            usuario.user = user
 
             usuario.save()
             user.save()

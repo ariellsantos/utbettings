@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="{% static 'base/css/materialize.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'base/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    {% include "base/nav/_nav.html" %}
+  </nav>
+
+
+  <div class="container">
+    <div class="section">
+      
+      {% block container %}
+          
+      {% endblock container %}
+          
+
+    </div>
+    <br><br>
+  </div>
+
+  
+
+
+  <!--  Scripts-->
+  <script src="{% static 'base/js/jquery.min.js' %}"></script>
+  <script src="{% static 'base/js/init.js' %}"></script>
+  <script src="{% static 'base/js/materialize.js' %}"></script>
+
+  </body>
+</html>

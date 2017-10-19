@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base/main.html' %}
+
+
+{% block container %}
     <h3>Generar rol para</h3>
     {% for torneo in torneos %}
         <a href="{% url 'apuestas:generar_rol' torneo.id %}">Liga: <strong>{{torneo.liga}}</strong> - Torneo: <strong>{{torneo.nombre}}</strong></a> 
     {% endfor %}
-        
-</body>
-</html>
+{% endblock container %}
+    
+   

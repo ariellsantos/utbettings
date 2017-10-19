@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base/main.html' %}
+
+
+{% block container %}
     <h2>Torneos para apuestas</h2>
-    
+
     {% for torneo in torneos %}
         <a href="">{{torneo.liga.nombre}}-{{torneo.nombre}}</a>
     {% endfor %}
+{% endblock container %}
+    
         
-</body>
-</html>
